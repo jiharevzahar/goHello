@@ -44,17 +44,22 @@ func printSorted(mp map[int]string) {
 }
 
 func main() {
+	//Average
 	var numbers [6]int = [6]int{1, 2, 3, 4, 5, 0}
 	fmt.Println(average(numbers))
+	
+	//Longest word
 	var slice = []string{"one", "two", "three", "sdds"}
 	fmt.Println(max(slice))
+	
+	//Reverse slice
 	var mas = []int64{1, 2, 3, 4}
-
 	result := reverse(mas)
 	for _, value := range result {
 		fmt.Printf("%d ", value)
 	}
 
+	//Sorted map
 	mp := map[int]string{1: "aa", 3: "cc", 2: "bb"}
 	printSorted(mp)
 }
