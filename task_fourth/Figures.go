@@ -47,7 +47,7 @@ func (c Circle) perimeter() (float64,error) {
 	return float64(4 * c.radius),nil
 }
 
-func notmain() {
+func main() {
 	var s Figure = Square{-3}
 	var c Figure = Circle{5}
 
