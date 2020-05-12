@@ -20,7 +20,7 @@ func main() {
 		fmt.Scanln(&source)
 
 		if source == "exit" {
-			os.Exit(2)
+			os.Exit(0)
 		}
 
 		if n, err := conn.Write([]byte(source)); n == 0 || err != nil {
