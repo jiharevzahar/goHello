@@ -30,7 +30,9 @@ func form(w http.ResponseWriter, r *http.Request) {
 		http.SetCookie(w, &cookie)
 		http.ServeFile(w, r, "form.html")
 	default:
-		fmt.Fprintf(w, "only GET and POST")
+		//gfmt.Fprintf(w, "method not supported")
+		err := fmt.Errorf("Error. Method not supported")
+		fmt.Println(err.Error())
 	}
 }
 
