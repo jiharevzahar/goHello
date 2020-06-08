@@ -7,22 +7,21 @@ import (
 
 var sl []string
 var wg sync.WaitGroup
-var mutex = &sync.Mutex{}
 
 func addLine(words string) {
-	mutex.Lock()
 	sl = append(sl, words)
-	mutex.Unlock()
 	wg.Done()
 }
 
 func main() {
-	wg.Add(4)
 
-	go addLine("I'll")
-	go addLine(" be here")
-	go addLine(" all day")
-	go addLine(" and you'll be too")
+	text := []string{"I'll", " be here", " all day", " and you'll", " and you'll be too"}
+	for _, str := range text {
+		wg.Add(1)
+		go addLine(str)
+		wg.Wait()
+	}
+
 	wg.Wait()
 	fmt.Println(sl)
 }
